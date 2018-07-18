@@ -181,6 +181,177 @@
         <!-- .end .wrap -->
       </section>
 
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h2>What is Typescript?
+          </h2>
+          <img src="./static/images/typescript.PNG" alt="typescript is a superset of js">
+          <p class="text-int">Typescript adds static typing to JS, but it's an opt-in approach</p>
+        </div>
+        </div>
+        <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <img src="./static/images/dynamic.PNG" alt="dt=dynamic vs. static types">
+          <p class="text-intro">The more explicit you are about your intent, the better the type system can help you find mistakes</p>
+        </div>
+        <!-- .end .bg-white shadow -->
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h2>Typescript
+          </h2>
+          <p class="text-intro">
+            <a href="https://www.typescriptlang.org">https://www.typescriptlang.org</a>
+          </p>
+          <div class="grid vertical-align">
+            <div class="column">
+
+
+              <div class="bg-white shadow">
+                <pre><code><h4>
+function speak(value) {
+  document.body.textContent = value;
+}
+
+var greeted = "World";
+var greeting = "Hello, ";
+var whatToSay = greeting + greeted;
+
+speak(whatToSay);
+</h4></code></pre>
+              </div>
+
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li>Change greeted and greeting to "2" and "3", then run it</li>
+                <li>Change them again but this time to 2 and 3, then run it</li>
+                <li>Guarantee that the value parameter will always be a string</li>
+              </ul>
+
+              <p>
+                <a href="./typescript.md">Answer</a>
+              </p>
+            </div>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h3>Typescript Example #2
+          </h3>
+          <div class="grid vertical-align">
+            <div class="column">
+
+
+              <div class="bg-white shadow">
+                <pre><code><h4>
+function totalLength(x, y) {
+  var total = x.length + y.lengt;
+  return total;
+}
+  </h4></code></pre>
+              </div>
+
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li>Add :string to y paramater; notice y.lengt errors now</li>
+                <li>Hover over var total</li>
+                <li>Add :number to total; hover over total; hover over totalLength</li>
+                <li>Try changing the fn's return type to string; what happens to return total</li>
+                <li>Add: any[ ] to x parameter</li>
+              </ul>
+
+              <p>
+                <a href="./typescript2.md">Answer</a>
+              </p>
+            </div>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h1>
+            Install typescript globally
+          </h1>
+          <br>
+          <br>
+          <h2>
+            <code>npm i -g typescript</code>
+          </h2>
+          <h2>
+            <code>tsc -v</code>
+          </h2>
+        </div>
+        <!-- .end .bg-white shadow -->
+        <!-- .end .wrap -->
+      </section>
+
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h3>Typescript Example #2
+          </h3>
+          <div class="grid vertical-align">
+            <div class="column">
+
+
+              <div class="bg-white shadow">
+                <pre><code><h5>
+function add(x: number, y: number): number {
+  return x + y;
+}
+
+console.log(add(5, 3));
+
+function totalLength(x: any[], y: string): number {
+  var total: number = x.length + y.length;
+  return total;
+}
+
+console.log(totalLength([1, 2, 3], 'bye'));
+</h5></code></pre>
+              </div>
+
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li class="text-intro">Create a file called sample.ts</li>
+                <li class="text-intro">Copy/paste this code into sample.ts</li>
+                <li class="text-intro">In terminal, type: tsc sample.ts</li>
+              </ul>
+
+            </div>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
       <section class="">
         <!--.wrap = container (width: 90%) -->
         <div class="wrap size-50 aligncenter">
@@ -622,8 +793,9 @@ export class AppComponent {
         </div>
         <ol>
 
-          <li>https://medium.com/@noufel.gouirhate/build-a-simple-chat-app-with-node-js-and-socket-io-ea716c093088</li>
-          <li>https://developers.google.com/maps/documentation/javascript/tutorial</li>
+          <li>Lynda.com - Typescript Essential Training</li>
+          <li></li>
+          <li></li>
           <li></li>
         </ol>
 
