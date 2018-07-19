@@ -179,7 +179,7 @@
                 <h2>
                   Angular
                 </h2>
-                <p class="text-intro">2 way data-binding, subcomponents, filtering content, http get</p>
+                <p class="text-intro">2 way data-binding, generating subcomponents, filtering content</p>
               </li>
             </ul>
           </div>
@@ -1096,25 +1096,27 @@ constructor() {
           <div class="grid vertical-align">
             <div class="column">
               <pre><code><h5>
-  
+&lt;input ... [(ngModel)]="query">
     </h5></code></pre>
               <br>
               <pre><code><h5>
-    
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
     </h5></code></pre>
               <br>
               <pre><code><h5>
-  
+@NgModule({
+  declarations: ...
+  imports: [BrowserModule, FormsModule],
     </h5></code></pre>
               <br>
             </div>
             <div class="column">
               <ul class="flexblock reasons">
-                <li class="text-intro">In app.component.html, add a click event and bind it to the showArtist method</li>
-                <li class="text-intro">In app.component.ts, create new showArtist() method</li>
-                <li class="text-intro">Try console logging $event, then artist; the label should change upon click events</li>
-                <li class="text-intro">In app.component.html, for the label tag, add *ngIf="query" so it only shows conditionally. Initialize query
-                  with ''</li>
+                <li class="text-intro">In app.component.html, add ngModel to the input field, but if you run it there's an error</li>
+                <li class="text-intro">In app.module.ts, import FormsModule </li>
+                <li class="text-intro">Also add it to the list of NgModule imports</li>
               </ul>
             </div>
           </div>
