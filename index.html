@@ -1124,11 +1124,135 @@ import { FormsModule } from '@angular/forms';
         <!-- .end .wrap -->
       </section>
 
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-60 aligncenter">
+          <h2>Generate Components | pipes</h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock activity">
+              <li class="text-intro">
+                Generate with CLI
+              </li>
+              <li class="text-intro">
+                transform(pipe, pipeModifier)
+              </li>
+              <li class="text-intro">
+                You can generate pipes, components, etc via 'npm generate pipe component-name'
+              </li>
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h3>
+            Generate pipes | filter
+          </h3>
+
+          <br />
+          <div class="grid vertical-align">
+            <div class="column">
+              <pre><code><h5>
+export class SearchArtistsPipe implements PipeTransform {
+  transform(pipeData, pipeModifier): any {
+    return pipeData.filter(eachItem =>
+       eachItem['name']
+        .toLowerCase()
+        .includes(pipeModifier.toLowerCase())
+    );
+  }
+}
+      </h5></code></pre>
+              <br>
+              <pre><code><h5>
+&lt;a ... *ngFor="let artist of (artists | searchArtists : query)" ...
+      </h5></code></pre>
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li class="text-intro">Run: ng generate pipe search-artists
+                  <br>Notice the new files generated (can delete the test file)
+                  <br>Notice app.module.ts auto-updated</li>
+                <li class="text-intro">In search-artists.pipe.ts, change the transform to filter items (google MDN filter)</li>
+                <li class="text-intro">In app.component.html, use the pipe</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-60 aligncenter">
+          <h2>Adding subcomponent</h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock activity">
+              <li class="text-intro">
+                Generate with CLI
+              </li>
+              <li class="text-intro">
+                ng generate component component-name
+              </li>
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
 
 
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h3>
+            Generate subcomponent
+          </h3>
 
+          <br />
+          <div class="grid vertical-align">
+            <div class="column">
+              <pre><code><h5>
+&lt;app-artist-details *ngIf="currentArtist" [artist]="currentArtist">&lt;/app-artist-details>
+        </h5></code></pre>
+              <br>
+              <pre><code><h5>
+export class AppComponent {
+  ...
+  currentArtist: object;
 
-
+  showArtist(artist) {
+    this.currentArtist = artist;
+        </h5></code></pre>
+              <br>
+              <pre><code><h5>
+@Component({
+  ...
+  inputs: ['artist']
+})
+</h5></code></pre>
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li class="text-intro">Run: ng generate component artist-details (can delete css, test, styleUrl)</li>
+                <li class="text-intro">In app.component.html, before the ending nav tag, insert app-artist-details tag</li>
+                <li class="text-intro">In app.component.ts, declare currentArtist</li>
+                <li class="text-intro">In showArtist(), set currentArtist to whatever was passed in </li>
+                <li class="text-intro">In artist-details.component.ts, add inputs</li>
+                <li class="text-intro">Make list appear if query exists; add *ngIf="query" to div tag wrapper around anchor. Within the click event,
+                  add a semicolon; query=' '</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
 
 
 
@@ -1146,7 +1270,6 @@ import { FormsModule } from '@angular/forms';
         <ol>
 
           <li>Lynda.com - Typescript Essential Training</li>
-          <li></li>
           <li></li>
           <li></li>
         </ol>
