@@ -173,6 +173,13 @@
                 <h2>
                   Angular
                 </h2>
+                <p class="text-intro">Add a CSS framework, learn about templates, data binding, events</p>
+              </li>
+              <li>
+                <h2>
+                  Angular
+                </h2>
+                <p class="text-intro">2 way data-binding, subcomponents, filtering content, http get</p>
               </li>
             </ul>
           </div>
@@ -369,7 +376,8 @@ console.log(totalLength([1, 2, 3], 'bye'));
               </li>
               <li>
                 <h2>
-                  AngularJS vs. Angular >= 2
+                  <a href="https://angularjs.org/">AngularJS</a> vs.
+                  <a href="https://angular.io">Angular >= 2</a>
                 </h2>
               </li>
               <li>
@@ -408,7 +416,7 @@ console.log(totalLength([1, 2, 3], 'bye'));
                 <h2>
                   Templates
                 </h2>
-                <p>Looks like HTML (kind of like EJS) but with attributes. Define tags you build yourself.</p>
+                <p>HTML (like EJS views) but with attributes. Define tags you build yourself.</p>
               </li>
               <li>
                 <h2>CLI</h2>
@@ -471,6 +479,8 @@ console.log(totalLength([1, 2, 3], 'bye'));
           <div class="">
             <pre><code><h3>
 npm i -g @angular/cli
+
+ng -v
 </h3></code></pre>
           </div>
           <!-- .end .bg-white shadow -->
@@ -756,16 +766,130 @@ export class AppComponent {
 
       <section class="bg-apple">
         <!--.wrap = container (width: 90%) -->
-        <div class="wrap size-30 aligncenter">
+        <div class="wrap size-70 aligncenter">
           <h1>
             Change the {{ title }}
           </h1>
 
           <br />
-          <p class="text-intro">In app.component.ts, change the exported title variable and view the change</p>
+
+          <br />
+          <div class="grid vertical-align">
+            <div class="column">
+              <pre><code><h4>
+export class AppComponent {
+  title = 'hello world'
+}      
+</h4></code></pre>
+            </div>
+            <div class="column">
+              <p class="text-intro">In app.component.ts, change the exported title variable and view the change</p>
+            </div>
+
+          </div>
+          <!-- .end .wrap -->
+      </section>
+
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h1>
+            Adding a CSS framework
+          </h1>
+          <p class="text-intro">In angular.json</p>
+
+          <br />
+          <div class="grid vertical-align">
+            <div class="column">
+              <pre><code><h5>
+"styles": [
+            "node_modules/bulma/css/bulma.min.css",
+            "src/styles.css"
+          ],
+</h5></code></pre>
+              <br>
+              <pre><code><h5>
+&lt;section class="section">
+    &lt;div class="container">
+  
+      &lt;div class="columns is-mobile">
+        &lt;div class="column is-half is-offset-one-quarter">
+</h5></code></pre>
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li class="text-intro">Run: npm i --save-dev bulma
+                  <br>Q. why save as devDep and not Dep?</li>
+                <li class="text-intro">In angular.json, add to styles the path to bulma</li>
+                <li class="text-intro">In app.component.html, add some bulma code, then 'ng serve' to see changes</li>
+              </ul>
+
+            </div>
+          </div>
         </div>
         <!-- .end .wrap -->
       </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-30 aligncenter">
+          <h2>Angular Templates
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock activity">
+              <li class="text-intro">
+                templateUrl
+              </li>
+              <li class="text-intro">
+                template
+              </li>
+              <li class="text-intro">
+                ES6 template syntax
+              </li>
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h1>
+            Angular Templates
+          </h1>
+          <p class="text-intro">In angular.json</p>
+
+          <br />
+          <div class="grid vertical-align">
+            <div class="column">
+              <pre><code><h5>
+@Component({
+  selector: 'app-root',
+  template: '&lt;h1>hello world&lt;/h1>',
+  stylesUrl: './app.component.css'
+})
+  </h5></code></pre>
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li class="text-intro">Replace templateUrl with template (if multiple lines, then use ES6 backticks)</li>
+                <li class="text-intro">Go back to using templateUrl: './app.component.ts'</li>
+                <li class="text-intro">Copy/paste from Blackboard, Angular Component 1 into app.component.html. (keep old bulma code)</li>
+                <li class="text-intro">Can delete: app.component.css, the stylesUrl line, app.component.spec.ts</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+
+
 
 
 
