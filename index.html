@@ -797,7 +797,6 @@ export class AppComponent {
           <h1>
             Adding a CSS framework
           </h1>
-          <p class="text-intro">In angular.json</p>
 
           <br />
           <div class="grid vertical-align">
@@ -861,7 +860,6 @@ export class AppComponent {
           <h1>
             Angular Templates
           </h1>
-          <p class="text-intro">In angular.json</p>
 
           <br />
           <div class="grid vertical-align">
@@ -888,13 +886,241 @@ export class AppComponent {
         <!-- .end .wrap -->
       </section>
 
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-30 aligncenter">
+          <h2>Data binding in Templates
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock activity">
+              <li class="text-intro">
+                {{ VAR }} expressions
+              </li>
+              <li class="text-intro">
+                Directives
+              </li>
+              <li class="text-intro">
+                constructor() method
+              </li>
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
 
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h2>
+            Data Binding with :string
+          </h2>
 
+          <br />
+          <div class="grid vertical-align">
+            <div class="column">
+              <pre><code><h5>
+export class AppComponent {
+  query: string;
 
+  constructor() {
+    this.query = 'Barot';
+  }
+}
+</h5></code></pre>
+              <br>
+              <pre><code><h5>
+&lt;label class="label">For: {{ query }}&lt;/label>
+</h5></code></pre>
 
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li class="text-intro">In app.component.ts, declare a new variable query</li>
+                <li class="text-intro">Initialize query with a value in the constructor</li>
+                <li class="text-intro">In app.component.html insert a label with the expression of query</li>
+                <li class="text-intro">fyi: inside the expression can be more complex js code</li>
+              </ul>
 
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
 
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h2>
+            Data Binding with :object
+          </h2>
 
+          <br />
+          <div class="grid vertical-align">
+            <div class="column">
+              <pre><code><h5>
+export class AppComponent {
+  query: string;
+  artists: object;                
+</h5></code></pre>
+              <br>
+              <pre><code><h5>
+constructor() {
+  this.query = '';
+  this.artists = [ ... ]
+</h5></code></pre>
+              <br>
+              <pre><code><h5>
+&lt;a class="panel-block" *ngFor="let artist of artists">
+  &lt;div>
+    &lt;h1>&lt;strong>{{ artist.name }}&lt;/strong>&lt;/h1>
+    &lt;p>{{ artist.reknown }}&lt;/p>
+  &lt;/div>
+&lt;/a>
+</h5></code></pre>
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li class="text-intro">In app.component.ts, declare new variable artists of type object</li>
+                <li class="text-intro">In constructor, instantiate artists with artists array found on Blackboard </li>
+                <li class="text-intro">Loop through the elements by placing ngFor in the anchor tag and inserting expressions for name and reknown</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-30 aligncenter">
+          <h2>Angular Events
+          </h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock activity">
+              <li class="text-intro">
+                ( eventname )
+              </li>
+              <li class="text-intro">
+                Bind to a method
+              </li>
+              <li class="text-intro">
+                Pass data from template
+                <br>(i.e. $event, loop variable)
+              </li>
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h3>
+            Events
+          </h3>
+
+          <br />
+          <div class="grid vertical-align">
+            <div class="column">
+              <pre><code><h5>
+&lt;a ... *ngFor="let artist of artists" (click)="showArtist(artist)"> 
+  </h5></code></pre>
+              <br>
+              <pre><code><h5>
+currentArtist: object;
+
+showArtist(artist) {
+  this.query = artist.name;
+} 
+
+constructor() {
+  this.query = '';
+  </h5></code></pre>
+              <br>
+              <pre><code><h5>
+&lt;label class="label" *ngIf="query">
+  </h5></code></pre>
+              <br>
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li class="text-intro">In app.component.html, add a click event and bind it to the showArtist method</li>
+                <li class="text-intro">In app.component.ts, create new showArtist() method</li>
+                <li class="text-intro">Try console logging $event, then artist; the label should change upon click events</li>
+                <li class="text-intro">In app.component.html, for the label tag, add *ngIf="query" so it only shows conditionally. Initialize query
+                  with empty string</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-30 aligncenter">
+          <h2>2 Way Data Binding</h2>
+          <br />
+          <div class="bg-white shadow">
+            <ul class="flexblock activity">
+              <li class="text-intro">
+                [( ngModel )] used for input fields
+              </li>
+              <li class="text-intro">
+                [( ngControl )] used for non-input fields
+              </li>
+              <li class="text-intro">
+                Need to import additional imports
+              </li>
+            </ul>
+          </div>
+          <!-- .end .bg-white shadow -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+
+      <section class="bg-apple">
+        <!--.wrap = container (width: 90%) -->
+        <div class="wrap size-90 aligncenter">
+          <h3>
+            ngModel: 2 way binding
+          </h3>
+
+          <br />
+          <div class="grid vertical-align">
+            <div class="column">
+              <pre><code><h5>
+  
+    </h5></code></pre>
+              <br>
+              <pre><code><h5>
+    
+    </h5></code></pre>
+              <br>
+              <pre><code><h5>
+  
+    </h5></code></pre>
+              <br>
+            </div>
+            <div class="column">
+              <ul class="flexblock reasons">
+                <li class="text-intro">In app.component.html, add a click event and bind it to the showArtist method</li>
+                <li class="text-intro">In app.component.ts, create new showArtist() method</li>
+                <li class="text-intro">Try console logging $event, then artist; the label should change upon click events</li>
+                <li class="text-intro">In app.component.html, for the label tag, add *ngIf="query" so it only shows conditionally. Initialize query
+                  with ''</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- .end .wrap -->
+      </section>
 
 
 
